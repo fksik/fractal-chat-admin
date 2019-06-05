@@ -1,22 +1,25 @@
 import * as React from 'react';
 import './App.scss';
+import { Router, Route } from 'react-router-dom';
+import { createBrowserHistory } from "history";
+import { Login } from './Login/Login';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { Home } from './Home/Home';
+const customHistory = createBrowserHistory();
 
-import logo from './logo.svg';
-
-class App extends React.Component {
+export class App extends React.Component {
   public render() {
     return (
-      <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to React</h1>
+      <div className="app">
+        <header className="app-header">
+          <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Router history={customHistory}>
+          <Route path='/login' component={Login} />
+          <PrivateRoute path='/' component={Home} redirectTo='/login' routeCondition={true} />
+        </Router>
       </div>
     );
   }
 }
 
-export default App;
