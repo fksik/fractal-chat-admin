@@ -5,7 +5,7 @@ export class ProtectedRoute extends React.Component<RouteProps> {
 	public component: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
 	public render() {
 		const { component, ...rest } = this.props;
-		this.component = component;
+		this.component = component!;
 		return (
 			<Route {...rest} render={this.renderFn} />
 		);
