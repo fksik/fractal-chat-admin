@@ -1,9 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import { history } from 'src/configStore';
+import { App } from './App';
+
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+	const div = document.createElement('div');
+	ReactDOM.render(<App history={history} />, div);
+	ReactDOM.unmountComponentAtNode(div);
 });
