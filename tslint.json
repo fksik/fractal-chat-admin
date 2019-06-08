@@ -11,12 +11,11 @@
     "variable-name": [
       true,
       "ban-keywords",
-      "check-format",
       "allow-leading-underscore",
       "require-const-for-all-caps"
     ],
     "quotemark": [true, "single", "jsx-double"],
     "interface-name": [false],
-    "indent": [true, "tabs", 2]
+		"indent": [true, "tabs", 2]
   }
 }

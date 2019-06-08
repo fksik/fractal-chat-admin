@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, RouteProps } from 'react-router-dom';
 
-export class PublicRoute extends Route {
+export class PublicRoute extends React.Component<RouteProps> {
 	public render() {
 		return (
-			<Route {...this.props}/>
+			<Route {...this.props} />
 		);
 	}
 };
