@@ -2,8 +2,8 @@ import { ConnectedRouter } from 'connected-react-router';
 import { History } from 'history';
 import * as React from 'react';
 import styles from './App.scss';
-import { NavBar } from './NavBar/NavBar';
-import { routes } from './routes';
+import { NavBar } from './Components/NavBar/NavBar';
+import { ROUTES } from './routes/Routes';
 
 interface AppProps {
 	history: History;
@@ -14,7 +14,7 @@ export class App extends React.Component<AppProps> {
 		return (
 			<div className={styles.app}>
 				<NavBar/>
-				<ConnectedRouter history={this.props.history}>{routes}</ConnectedRouter>
+				<ConnectedRouter history={this.props.history}>{ROUTES(true)}</ConnectedRouter>
 			</div>
 		);
 	}

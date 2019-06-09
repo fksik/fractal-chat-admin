@@ -1,7 +1,7 @@
 import { routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import { applyMiddleware, compose, createStore } from 'redux';
-import { rootReducer } from './reducers';
+import { rootReducer } from './Reducers';
 
 export const history = createBrowserHistory();
 
@@ -17,7 +17,7 @@ export default function configureStore(preloadedState?: any) {
 	// Hot reloading
 	if (module.hot) {
 		// Enable Webpack hot module replacement for reducers
-		module.hot.accept('./reducers', () => {
+		module.hot.accept('./Reducers', () => {
 			store.replaceReducer(rootReducer(history));
 		});
 	}
