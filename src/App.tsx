@@ -1,22 +1,21 @@
+import { ConnectedRouter } from 'connected-react-router';
+import { History } from 'history';
 import * as React from 'react';
-import './App.scss';
+import styles from './App.scss';
+import { NavBar } from './Components/NavBar/NavBar';
+import { ROUTES } from './routes/Routes';
 
-import logo from './logo.svg';
-
-class App extends React.Component {
-  public render() {
-    return (
-      <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to React</h1>
-        </header>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+interface AppProps {
+	history: History;
 }
 
-export default App;
+export class App extends React.Component<AppProps> {
+	public render() {
+		return (
+			<div className={styles.app}>
+				<NavBar/>
+				<ConnectedRouter history={this.props.history}>{ROUTES(true)}</ConnectedRouter>
+			</div>
+		);
+	}
+}
