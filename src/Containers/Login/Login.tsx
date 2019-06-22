@@ -1,25 +1,15 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import { AuthActions, login } from 'src/Actions/AuthActions';
-import { FractalAction } from 'src/models/Action';
-import { User } from 'src/models/User';
-import { LoginDispatchProps, LoginProps, LoginState } from './LoginTypes';
+import styles from './Login.scss';
+import { LoginForm } from './LoginForm';
 
-export class Login extends React.Component<LoginProps, LoginState> {
+export class Login extends React.Component {
 	public render() {
 		return (
-			<div>login</div>
-		)
+			<div className={styles.loginContainer}>
+				<div className={styles.loginWrap}>
+					<LoginForm />
+				</div>
+			</div>
+		);
 	}
 }
-
-function mapDispatchToProps(dispatch: Dispatch<FractalAction<User, AuthActions>>): LoginDispatchProps {
-	return {
-		login: (user: User) => {
-			dispatch(login(user));
-		}
-	}
-}
-
-export default connect<{}, LoginDispatchProps, {}>(null, mapDispatchToProps)(Login);

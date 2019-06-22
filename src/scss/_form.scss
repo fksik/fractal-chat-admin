@@ -1,0 +1,45 @@
+@import './mixins';
+
+$form-color:rgb(20, 20, 20);
+$form-border: #e6e6e6;
+
+:global {
+	.form-wrap {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background-color: $white;
+		border-radius: 2px;
+		@include margin-bottom(24, px);
+		@include margin-top(3, px);
+
+		label{
+			@include padding-bottom(12, px);
+			font-size: 15px;
+		}
+
+		input {
+			outline: none;
+			overflow: visible;
+			margin: 0;
+			touch-action: manipulation;
+			&.form-control {
+				border: 1px solid $form-border;
+				color: $form-color;
+				line-height: 1.2;
+				font-size: 18px;
+				display: block;
+				width: 100%;
+				background: 0 0;
+				height: 55px;
+				padding: 0 25px;
+			}
+		}
+
+		.form-message {
+			font-size: small;
+			min-height: 12px;
+			@include padding(6, px);
+		}
+	}
+}

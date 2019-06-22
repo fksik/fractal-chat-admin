@@ -1,0 +1,15 @@
+@import './variables';
+
+:global {
+	.m-b-2 {
+		@include margin-bottom(2);
+	}
+
+	.p-1 {
+		@include padding(1);
+	}
+
+	.text-warn {
+		color: $warn;
+	}
+}

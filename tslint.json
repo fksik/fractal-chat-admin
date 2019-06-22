@@ -17,6 +17,8 @@
 		],
 		"quotemark": [true, "single", "jsx-double"],
 		"interface-name": [false],
-		"indent": [true, "tabs", 2]
+		"indent": [true, "tabs", 2],
+		"no-console": false,
+		"object-literal-sort-keys": false
 	}
 }

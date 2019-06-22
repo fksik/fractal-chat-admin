@@ -14,7 +14,7 @@ export class App extends React.Component<AppProps> {
 		return (
 			<div className={styles.app}>
 				<NavBar/>
-				<ConnectedRouter history={this.props.history}>{ROUTES(true)}</ConnectedRouter>
+				<ConnectedRouter history={this.props.history}>{ROUTES(false)}</ConnectedRouter>
 			</div>
 		);
 	}

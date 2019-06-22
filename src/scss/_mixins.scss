@@ -1,0 +1,29 @@
+@import 'variables';
+
+@mixin font {
+	font-family: $font-raleway;
+}
+
+@mixin margin-top ($val, $unit: rem) {
+	margin-top: $val + $unit;
+}
+
+@mixin margin-bottom($val, $unit: rem) {
+	margin-bottom: $val + $unit;
+}
+
+@mixin padding($val, $unit: rem) {
+	padding: $val + $unit;
+}
+
+@mixin padding-y($val, $unit: rem) {
+	padding: $val + $unit 0;
+}
+
+@mixin padding-bottom($val, $unit: rem) {
+	padding-bottom: $val + $unit;
+}
+
+@mixin padding-left($val, $unit: rem) {
+	padding-left: $val + $unit;
+}
