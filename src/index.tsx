@@ -4,9 +4,11 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { App } from './App';
 import configureStore, { history } from './configStore';
+import { configHttpInterceptor } from './HttpInterceptor';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();
+configHttpInterceptor();
 
 function render() {
 	ReactDOM.render(

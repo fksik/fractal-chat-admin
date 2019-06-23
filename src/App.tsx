@@ -3,7 +3,7 @@ import { History } from 'history';
 import * as React from 'react';
 import styles from './App.scss';
 import { NavBar } from './Components/NavBar/NavBar';
-import { ROUTES } from './routes/Routes';
+import { ROUTES } from './Routes/Routes';
 
 interface AppProps {
 	history: History;

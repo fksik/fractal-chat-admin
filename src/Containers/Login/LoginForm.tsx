@@ -1,10 +1,11 @@
+import http from 'axios';
 import * as React from 'react';
 import { ChangeEvent, FormEvent } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { AuthActions, login } from 'src/Actions/AuthActions';
-import { FractalAction } from 'src/models/Action';
-import { User } from 'src/models/User';
+import { FractalAction } from 'src/Models/Action';
+import { User } from 'src/Models/User';
 import { FormValidator } from 'src/Validations/FormValidator';
 import { Validator } from 'src/Validations/Validtor';
 import { LoginDispatchProps, LoginProps, LoginState } from './LoginTypes';
@@ -58,7 +59,9 @@ export class LoginForm extends React.Component<LoginProps, LoginState> {
 						{isPasswordError ? this.state.pMsg : ' '}
 					</p>
 				</div>
-				<button type="submit">LOGIN</button>
+				<button type="submit" className="btn btn-primary">
+					LOGIN
+				</button>
 			</form>
 		);
 	}
@@ -90,7 +93,15 @@ export class LoginForm extends React.Component<LoginProps, LoginState> {
 			pValid: pValidation.isValid,
 			submitted: true
 		});
+		this.doLogin({
+			username: this.state.username!,
+			password: this.state!.password!
+		});
 	};
+
+	private async doLogin(data: { username: string; password: string }) {
+		await http.post<{token: string}>('/api/access/login', data);
+	}
 }
 
 function mapDispatchToProps(

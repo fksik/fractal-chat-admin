@@ -1,6 +1,6 @@
 import { AuthActions } from 'src/Actions/AuthActions';
-import { FractalAction } from 'src/models/Action';
-import { User } from 'src/models/User';
+import { FractalAction } from 'src/Models/Action';
+import { User } from 'src/Models/User';
 
 export function AuthReducer(
 	state: User | undefined,
